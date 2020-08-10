@@ -5,7 +5,12 @@
 	        <div class="section-title">
 	        	<?php if ( have_posts() ) : ?>
 	        	<h2><span>
-	        		<?php printf( __( 'Search Results for: %s', 'shape' ), '<span>' . get_search_query() . '</span>' ); ?>
+	        		<?php 
+				$archive_title = sprintf(
+			'%1$s %2$s',
+			'<span>' . __( 'Search:', 'shape' ) . '</span>',
+			'&ldquo;' . get_search_query() . '&rdquo;'
+		); ?>
 	        	</span></h2>
 	        </div>
 			<div class="row masonrygrid listrecent">
